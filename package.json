@@ -1,8 +1,8 @@
 {
-    "title": "Simple Sidebar",
-    "name": "startbootstrap-simple-sidebar",
+    "title": "Logo Nav",
+    "name": "startbootstrap-logo-nav",
     "version": "4.1.1",
-    "description": "A simple sidbar navigation HTMl template built with Bootstrap",
+    "description": "A Bootstrap template with a logo in the navbar",
     "keywords": [
         "css",
         "sass",
@@ -11,9 +11,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/simple-sidebar",
+    "homepage": "https://startbootstrap.com/template-overviews/logo-nav",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/issues",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-logo-nav/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -23,7 +23,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-logo-nav.git"
     },
     "dependencies": {
         "bootstrap": "4.1.1",
