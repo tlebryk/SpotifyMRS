@@ -35,15 +35,17 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
+
+              <a class="nav-link" href="literaturereview.html">Literature Review</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="eda.html">EDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="model.html">Modeling</a>
+              <a class="nav-link" href="model.html">Model</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="literaturereview.html">Literature Review</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="results.html">Results</a>
             </li>
@@ -99,7 +101,7 @@
 
       </p>
       <p>
-        The increase in accuracy was to be expected: increasing features of an underfit model generally increases predictive accuracy. One thing we were worried about, however, is the idea that the increases in accuracy comes less from improvements in the model, and more from decreases in the available options to select from. <i>Prima facie </i>, this is a ridiculous claim because narrowing one out of 40 million songs has a negligible impact. However, if the model is mainly working on playlists with extremely high similarity indexes to preexisting ones - for example the set of all Disney songs - then the collaborative filtering method probably only has a limited number of songs it has to recommend from. Culling that subset by one may have a much greater impact than was originally anticipated. To provide an example, perhaps after three input songs, all the songs are from the same movie soundtrack. The set of this movie soundtrack is only 10 songs long. Even if the model identifies that future recommendations should come from this soundtrack, it still only has a 1/7 chance of selecting the exact next song as our evaluation method requires. By adding two more songs to the input, if the trend of the movie soundtrack continues, then the chances improve to 1/5.
+        The increase in accuracy was to be expected: increasing features of an underfit model generally increases predictive accuracy. One thing we were worried about, however, is the idea that the increases in accuracy comes less from improvements in the model, and more from decreases in the available options to select from. <i>Prima facie </i>, this is a ridiculous claim because narrowing one out of the millions of songs has a negligible impact. However, if the model is mainly working on playlists with extremely high similarity indexes to preexisting ones - for example the set of all Disney songs - then the collaborative filtering method probably only has a limited number of songs it has to recommend from. Culling that subset by one may have a much greater impact than was originally anticipated. To provide an example, perhaps after three input songs, all the songs are from the same movie soundtrack. The set of this movie soundtrack is only 10 songs long. Even if the model identifies that future recommendations should come from this soundtrack, it still only has a 1/7 chance of selecting the exact next song as our evaluation method requires. By adding two more songs to the input, if the trend of the movie soundtrack continues, then the chances improve to 1/5.
 
       </p>
       <p>

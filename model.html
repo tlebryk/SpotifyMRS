@@ -35,14 +35,15 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="literaturereview.html">Literature Review</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="eda.html">EDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="model.html">Modeling</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="literaturereview.html">Literature Review</a>
+              <a class="nav-link" href="model.html">Model</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="results.html">Results</a>
@@ -76,7 +77,7 @@ We have two baselines:
     </li>
     </ol>
       <p>
-        To improve on this baseline, we first attempted to use word embedding techniques to find the relationships between songs. Word embeddings map words to vectors to find relationships between different words (and therefore determine their contextual significance). We attempted to do something similar by treating each song as a word and each playlist as a sentence to create a Doc2Vec model. However, we found that the data was too sparse to make for an effective model. For the language problem, the number of words is on a magnitude of hundreds of thousand; the Oxford English Dictionary, for instance, has 170,000 words. At least in the general sense of the problem, there are a nearly infinite number of sentences out there to train off. With the playlist problem there are over 2 million songs but only 1 million playlists from which to train. This meant there was simply not enough data per song to find relationships and generate effective predictions.
+        To improve on these baselines, we first attempted to use word embedding techniques to find the relationships between songs. Word embeddings map words to vectors to find relationships between different words (and therefore determine their contextual significance). We attempted to do something similar by treating each song as a word and each playlist as a sentence to create a Doc2Vec model. However, we found that the data was too sparse to make for an effective model. For the language problem, the number of words is on a magnitude of hundreds of thousand; the Oxford English Dictionary, for instance, has 170,000 words. At least in the general sense of the problem, there are a nearly infinite number of sentences out there to train off. With the playlist problem there are over 2 million songs but only 1 million playlists from which to train. This meant there was simply not enough data per song to find relationships and generate effective predictions.
 
       </p>
       <p>
@@ -84,7 +85,7 @@ We have two baselines:
 
       </p>
       <p>
-        We also played with some prior assumptions about the usefulness of number of followers in weighting a model. During data exploration, we theorized that the most popular playlists have important insights into listener preference and therefore should actually be given more weight in future models. We attempted to leverage this insight by adding duplicate playlists for popular playlists. We took a training sample of 100,000 playlists and duplicated a playlist for every follower it had. This increased the “size” of that training set to 240,000 playlists (the average playlist has 2.4 followers).
+        We also played with some prior assumptions about the usefulness of number of followers in weighting a model. During data exploration, we theorized that the most popular playlists have important insights into listener preference and therefore should actually be given more weight in future models. We attempted to leverage this insight by adding duplicate playlists for popular playlists. We took a separate training sample of 100,000 playlists and duplicated a playlist for every follower it had. This increased the “size” of that training set to 240,000 playlists (the average playlist has 2.4 followers). As we discuss in the results section, however, this did not increase accuracy and in fact decreased it, likely due to overfitting.
       </p>
 
 

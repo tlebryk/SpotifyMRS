@@ -36,13 +36,13 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="literaturereview.html">Literature Review</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="eda.html">EDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="model.html">Modeling</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="literaturereview.html">Literature Review</a>
+              <a class="nav-link" href="model.html">Model</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="results.html">Results</a>
@@ -77,7 +77,7 @@ The first potential approach we explored was based on the assumption of latent c
   The main benefit of collaborative filtering in relation to this problem, however, lies with the nature of the data we are working with. Collaborative filtering completely ignores all features relating to specifics of the actual songs themselves. Content-based models might use features such as lyrics of a song, or waveforms of their audio data. Collaborative filtering, on the other hand, only utilizes information about which playlists each song is included in. This makes it perfect for use on the Million Playlists Dataset, given that this dataset has no song-specific feature information. The dataset is in essence simply a list of songs in playlists, which is exactly the type of data collaborative filtering uses as inputs. Collaborative filtering does not leverage or make inferences about any meta-information about playlists such as intended genre or mood in the way that a hybrid of content-based approach might. However, our EDA showed that in many cases, the problem is a fairly straightforward one where people have fairly straightforward aims and create fairly similar playlists. This signals that other approaches may overfit the data and miss the elegance of a simple model.
 </p>
 <p>
-  We also investigated how we might weight playlists. We believed that playlists with more followers deserved more influence on the final model than models without many followers. We investigated the distribution of followers for playlists and found the following breakdown.
+  We also investigated how we might weight playlists. We believed that playlists with more followers might deserve more influence on the final model than models without many followers. We investigated the distribution of followers for playlists and found the following breakdown.
 </p>
 
 <table border= '1px solid black'>
