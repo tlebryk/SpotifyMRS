@@ -62,17 +62,19 @@
     <div class="container">
       <h1 class="mt-5">Conclusion</h1>
       <p>
-        In this project, we implemented a collaborative filtering method to generate recommendations for a Spotify playlist.  Our project takes a difficult problem of predicting a singular held out song. This gives us confidence that the broader task this project sets out to accomplish - not just guessing left out validation sets but proving new predictions for actual users - is done fairly well by this model.
+        In this project, we implemented a collaborative filtering method to generate recommendations for a Spotify playlist. Our project takes a difficult problem of predicting a singular held out song. This gives us confidence that the broader task this project sets out to accomplish - not just guessing left out validation sets but providing relevant new predictions for actual users - is done fairly well by this model.
       </p>
       <p>
-        Of course, there is plenty of room to build off our model. While the success of our model confirms our intuition that collaborative filtering is a strong start to tackling the problem (relative to purely content or user based approaches), it does not rule out the potential for combining other methods in an ensemble to build an even stronger model.
+        Of course, there is plenty of room to build off our model. While the success of our model confirms our intuition that collaborative filtering is a strong start to tackling the problem (relative to purely content or user-based approaches), it does not rule out the potential for combining other methods in an ensemble to build an even stronger model.
       </p>
       <p>
-        Furthermore, even when it comes to the general problem of playlist generation, we operated only under a singular evaluative framework: accuracy. We neglected other non-accuracy based methods, not to mention ratings based models which have become hugely popular evaluation metrics on other streaming platforms.
+        Furthermore, even when it comes to the general problem of playlist generation, we operated only under a singular evaluative framework: accuracy. We neglected other non-accuracy based methods, not to mention ratings evaluations which have become hugely popular evaluation metrics on other streaming platforms. One of Spotify’s MRS features is a weekly playlist titled “Discover Weekly” which aims at providing 30 “new discoveries and deep cuts.” Building such a feature could utilize an ensemble method of collaborative filtering and other user-based data such as previous listens (discovery) and content-based data such as listen count (deep cuts), while evaluating the predictions on a different metric such as novelty.
       </p>
       <p>
-        One thing our evaluative framework (accuracy on randomly selected left out validation song) neglects is order. Considering these playlists as unordered lists is not an unreasonable assumption: the majority of Spotify users are not subscribers, meaning they can only ‘shuffle play’ their playlists, effectively rendering order arbitrary. However, there are applications for taking order into account. Premium subscribers, who don’t have to adhere to shuffle play, can benefit from the order in which a playlist ‘flows.’ Spotify’s radio generation function should take flow and order into account as well. Considering the failure of our word embeddedness approach, order-sensitive recommendations would require more information from content or user-based techniques to capture how the nuance of order in a playlist.
-
+        One thing our evaluative framework (accuracy on randomly selected left out validation song) neglects is order. Considering these playlists as unordered lists is not an unreasonable assumption: the majority of Spotify users are not subscribers, meaning they can only ‘shuffle play’ their playlists, effectively rendering order arbitrary. However, there are applications for taking order into account. Premium subscribers, who don’t have to adhere to shuffle play, can benefit from the order in which a playlist ‘flows.’ Spotify’s radio generation function should take flow and order into account as well. Considering the failure of our word embeddedness approach, order-sensitive recommendations would require more information from content or user-based techniques to capture the nuance of order in a playlist.
+      </p>
+      <p>
+        Overall, our finding that a pure collaborative filtering model yields a model that can predict an exact song almost in almost 1 out of 20 playlists should not be underlooked. When using 10 predictions, the number jumps to 13.25% which is not an insignificant accuracy score. Furthermore, its simplicity allows ample room for other methods to be added on top, an exciting prospect for the complex, unsolved problem of music recommendation systems.
       </p>
     </div>
     <!-- /.container -->
