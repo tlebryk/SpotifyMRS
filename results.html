@@ -51,7 +51,7 @@
               <a class="nav-link" href="conclusion.html">Conclusion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="citations.html">Works Cited</a>
+              <a class="nav-link" href="citations.html">References</a>
             </li>
           </ul>
         </div>
@@ -71,17 +71,17 @@
             <th>Random Baseline</th>
             <th>Mode Baseline</th>
             <th>Full Model</th>
-            <th>Random Baseline</th>
+            <th>Random Baseline 10 Guesses</th>
             <th>Mode Baseline 10 Guesses</th>
             <th>Full Model 10 Guesses</th>
 
           </tr>
           <tr>
             <td>~0.00%</td>
-            <td>0.06%</td>
+            <td>0.16%</td>
             <td>4.39%</td>
             <td>~0.00%</td>
-            <td>0.016%</td>
+            <td>0.80%</td>
             <td>13.25%</td>
           </tr>
         </table>
@@ -91,7 +91,7 @@
       Our full model’s single guess accuracy was 4.39. We believe this confirms our intuition that collaborative filtering is an effective standalone method for solving this problem. Relatedly, the dataset must have some underlying trends that collaborative filtering is capturing quite well. Perhaps this is trivial, but our surprising success indicates that user behavior around playlists is fairly predictable based on general playlist patterns.
       </p>
       <p>
-        To evaluate the cold start problem, we randomly selected k songs in the dataset and predicted another randomly held out song based on those songs. The graph shows the success rate of our model as a function of k, the number of input songs we used per playlist to generate the predictions. A k of 1 represents the most difficult formulation of the cold start problem, predicting a song based off just a single input song, while increasing n gradually reduces the difficulty of the problem. We found a generally increasing relationship between n and accuracy, which we expected. With extremely low k, our model did perform much worse than using the entire playlist as input, but even low values of k had reasonable accuracy values given the difficulty of the problem in question.
+        To evaluate the cold start problem, we randomly selected k songs in the dataset and predicted another randomly held out song based on those songs. The graph shows the success rate of our model as a function of k, the number of input songs we used per playlist to generate the predictions. A k of 1 represents the most difficult formulation of the cold start problem, predicting a song based off just a single input song, while increasing k gradually reduces the difficulty of the problem. We found a generally increasing relationship between k and accuracy, which we expected. With extremely low k, our model did perform much worse than using the entire playlist as input, but even low values of k had reasonable accuracy values given the difficulty of the problem in question.
 
       </p>
       <p>

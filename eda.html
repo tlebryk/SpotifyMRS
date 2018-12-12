@@ -51,7 +51,7 @@
               <a class="nav-link" href="conclusion.html">Conclusion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="citations.html">Works Cited</a>
+              <a class="nav-link" href="citations.html">References</a>
             </li>
           </ul>
         </div>
@@ -67,7 +67,7 @@
 <p>
 The first potential approach we explored was based on the assumption of latent classes, then using maximum likelihood methods to parameterize the latent classes and classify new songs. We theorized these latent classes might end up capturing some genre information, given the large amount of playlists with similar, genre defining names like “metal” or “disney”. Each spotify playlist in the data set would be categorized into an arbitrary latent class. Then, given an inputted playlist, we could predict new songs based on the playlist’s likely latent class. To explore the possibility of playlists with similar names containing similar songs, we first looked at the top 20 most common playlist names. Below is a graph of the similarity index for the 20 names, which we define as the average percentage of songs present in both of 2 randomly selected playlists of the same name. We ran this exercise on 10 percent of the data - 100,000 playlists. Names with a high similarity index would theoretically be more prone to suggesting the most popular songs of those playlists, while names with a lower similarity index might be more prone to suggesting a wider variety of songs rather than the few most popular songs of playlists with those names.
 </p>
-<img style="padding: 0 15px float: left," src="similarity scores.jpg" width="599" height="442"  align=”right” alt="" class='center'>
+<img style="padding: 0 15px float: left," src="similarity_scores.jpg" width="599" height="442"  align=”right” alt="" class='center'>
 
 <p>
   Based on these findings, we believe that there are a decent number of playlists that are similar. That is to say: many of the millions of songs are rarely touched. An alternative approach that evaluates on a metric such as novelness of suggestion might hold that effective playlists would introduce listeners to some of those songs that are currently untouched. However, considering our current metric of evaluation is based on successfully completing playlists based off a slice of the initial part of the playlist, this is less of a concern. This is all a somewhat roundabout way of saying that the fact that there are many playlists with fairly high similarity indexes plus the fact that playlists are using many of the same songs over and over again signals that collaborative filtering can be an effective route to tackling this problem, as collaborative filtering is good at predicting similar songs but is less effective at generating novel suggestions.
