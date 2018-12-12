@@ -8,8 +8,39 @@ body {
   padding-top: 54px;
 }
 
+
+
+table#borderless {
+  border: 0px;
+
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
   }
+}
+table#t01 {
+  border: 0px solid white;
+  border-collapse: collapse;
+
+  /* background-color: black; */
+}
+table {
+  width: 100%;
+}
+
+th {
+  text-align: center;
+}
+
+table.a {
+
+border: 1px solid black;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -60,33 +60,41 @@
 
     <!-- Page Content -->
     <div class="container">
-      <h1 class="mt-5">Conclusion</h1>
-      <p>
-        In this project, we implemented a collaborative filtering method to generate recommendations for a Spotify playlist.  Our project takes a difficult problem of predicting a singular held out song. This gives us confidence that the broader task this project sets out to accomplish - not just guessing left out validation sets but proving new predictions for actual users - is done fairly well by this model.
+      <h1 class="mt-5">Works cited</h1>
+      <p class='hangingindent'>
+        Aggarwal, C. C. (2016). Evaluating Recommender Systems. In C. C. Aggarwal (Ed.), Recommender Systems: The Textbook (pp. 225–254). Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-29659-3_7
       </p>
-      <p>
-        Of course, there is plenty of room to build off our model. While the success of our model confirms our intuition that collaborative filtering is a strong start to tackling the problem (relative to purely content or user based approaches), it does not rule out the potential for combining other methods in an ensemble to build an even stronger model.
-      </p>
-      <p>
-        Furthermore, even when it comes to the general problem of playlist generation, we operated only under a singular evaluative framework: accuracy. We neglected other non-accuracy based methods, not to mention ratings based models which have become hugely popular evaluation metrics on other streaming platforms.
-      </p>
-      <p>
-        One thing our evaluative framework (accuracy on randomly selected left out validation song) neglects is order. Considering these playlists as unordered lists is not an unreasonable assumption: the majority of Spotify users are not subscribers, meaning they can only ‘shuffle play’ their playlists, effectively rendering order arbitrary. However, there are applications for taking order into account. Premium subscribers, who don’t have to adhere to shuffle play, can benefit from the order in which a playlist ‘flows.’ Spotify’s radio generation function should take flow and order into account as well. Considering the failure of our word embeddedness approach, order-sensitive recommendations would require more information from content or user-based techniques to capture how the nuance of order in a playlist.
+    <p class='hangingindent'>
+      Ciocca, S. (2017, October 10). How Does Spotify Know You So Well? – Member Feature Stories. Retrieved December 12, 2018, from https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe
+    </p>
+      <p class='hangingindent'>
+  Fernández-Tobías, I., Braunhofer, M., Elahi, M., Ricci, F., & Cantador, I. (2016). Alleviating the new user problem in collaborative filtering by exploiting personality information. User Modeling and User-Adapted Interaction, 26(2), 221–255. https://doi.org/10.1007/s11257-016-9172-z
+</p>
+<p class='hangingindent'>
+  Logan, B., & Salomon, A. (2001). A Content-based Music Similarity Function, 18.
+</p>
+<p class='hangingindent'>
+  Schedl, M., Zamani, H., Chen, C.-W., Deldjoo, Y., & Elahi, M. (2018). Current challenges and visions in music recommender systems research. International Journal of Multimedia Information Retrieval, 7(2), 95–116. https://doi.org/10.1007/s13735-018-0154-2
+</p>
+<p class='hangingindent'>
+  Spotify Technology S.A. Announces Financial Results for Third Quarter 2018. (2018, November 1). Retrieved December 10, 2018, from https://investors.spotify.com/financials/press-release-details/2018/Spotify-Technology-SA-Announces-Financial-Results-for-Third-Quarter-2018/default.aspx
+</p>
 
-      </p>
+<br>
+
     </div>
     <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <footer class="py-5 bg-dark">
-         <div class="container">
-           <p class="m-0 text-center text-white">Template from Startbootstrap.com Logonav design </p>
-           <p class="m-0 text-center text-white">By David Gibson and Theo Lebryk</p>
 
-         </div>
-         <!-- /.container -->
-       </footer>
   </body>
+  <footer class="py-5 bg-dark">
+       <div class="container">
+         <p class="m-0 text-center text-white">Template from Startbootstrap.com Logonav design </p>
+         <p class="m-0 text-center text-white">By David Gibson and Theo Lebryk</p>
 
+       </div>
+       <!-- /.container -->
+     </footer>
 </html>

@@ -50,6 +50,9 @@
             <li class="nav-item">
               <a class="nav-link" href="conclusion.html">Conclusion</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="citations.html">Works Cited</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,9 +62,18 @@
     <div class="container">
       <h1 class="mt-5">Literature Review</h1>
         <!-- <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo. -->
-      <p>
-        There are two main aspects of this problem: generating recommendations give a set of songs and then evaluating those recommendations. Schedl et al.’s work summarizing the state of the field lays out four main ways to tackle the formulation of recommendations:
-      </p>
+<h5>MRS Problem Context</h5>
+
+
+<h5>Solving the MRS Problem </h5>
+<p>
+  There are two main aspects of this problem: generating recommendations give a set of songs and then evaluating those recommendations.
+</p>
+
+<h6>Automatic Playlist Generation </h6>
+<p>
+Schedl et al.’s work summarizing the state of the field lays out four main ways to tackle the formulation of recommendations:
+</p>
       <p>
         <ol>
           <li>Content-based strategies: </li>
@@ -85,9 +97,14 @@
       <p>
         Spotify’s second main functionality is generating radio on request or after a listener has reached the end of a playlist. This last part is more akin to the MRS problems facing Pandora, which is in part why we left it outside the scope of this project. That said, continuous listening is easily implementable by simply looping our batch recommender as needed.
       </p>
+<h6>  Evaluation </h6>
       <p>
         Evaluation for MRS can be split into three main categories: error, accuracy, and other methods. We settled on an accuracy based evaluation system. Error based methods require ratings systems to implement some sort of distance metric, and therefore are irrelevant to this problem. Non-accuracy based solutions look at metrics such as spread, diversity, novelty and serendipity of recommendations. These metrics are best served as complementary metrics, but by themselves do not offer a solution to this problem: a model can very well predict novel recommendations or have a wide coverage of the data in how it generates recommendations without those recommendations actually being useful to a wide swath of users. Without ratings to test if these novel, diverse, or serendipitous recommendations are actually well-received, accuracy remains the best metric for evaluating our model.
       </p>
+      <p>
+        See <a href='citations.html'>works cited page</a> for list of references. 
+      </p>
+
 
     </div>
     <!-- /.container -->

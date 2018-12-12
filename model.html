@@ -50,6 +50,9 @@
             <li class="nav-item">
               <a class="nav-link" href="conclusion.html">Conclusion</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="citations.html">Works Cited</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -62,8 +65,16 @@
         <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo. -->
 
       <p>
-We have two baselines: randomly selecting a song and selecting the most popular song in the data set (“HUMBLE.” by Kendrick Lamar). For the first method, the statistical chances are 1 in ~2 million of predicting a single song correctly, given the number of songs in the data set, and so we had 0% accuracy as expected. As for the “HUMBLE” baseline model, we found that recommending the most popular song worked about 0.06 percent of the time.
+We have two baselines:
       </p>
+      <ol>
+        <li>
+      <u>Random baseline</u>: for n total guesses, randomly select n songs from the set as predictions.
+    </li>
+    <li>
+      <u>Mode baseline</u>: Select the top n most popular songs in the dataset based on number of appearances in playlists where n is the number of guesses we allow the model to make. For example, when n=1, we guess the most popular song, “HUMBLE.” by Kendrick Lamar.
+    </li>
+    </ol>
       <p>
         At first, we attempted to use word embedding techniques to find the relationships between songs. Word embeddings map words to vectors to find relationships between different words (and therefore determine their contextual significance). We attempted to do something similar by treating each song as a word and each playlist as a sentence to create a Doc2Vec model. However, we found that data was too sparse to make for an effective model. For the language problem, the number of words is on a magnitude of hundreds of thousand; the Oxford English Dictionary, for instance, has 170,000 words. At least in the general sense of the problem, there are a nearly infinite number of sentences out there to train off. With the playlist problem there are over 2 million songs and a training dataset of only 1 million playlists. This meant there was simply not enough data per song to find relationships and generate effective predictions
 
