@@ -57,19 +57,31 @@
 
     <!-- Page Content -->
     <div class="container">
-      <h1 class="mt-5">Spotify Million Playlist 109A Final Project</h1>
-      <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>
-        <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.
+      <h1 class="mt-5">Exploratory Data Analysis</h1>
+<p> The only data set we are using to solve the playlist prediction problem is the Spotify Million Playlists data set. This data set contains individual statistics for each of one million spotify playlists, such as playlist name, number of followers, last modified, a list of each individual song in that playlist, and several other columns.
+</p>
+<p> The first potential approach we explored was assuming the existence of latent classes, then using maximum likelihood methods to parameterize the latent classes and classify new songs. We theorized these latent classes might end up capturing some genre information, given the large amount of playlists with similar, genre defining names like “metal” or “disney”. Each spotify playlist in the data set would be categorized into an arbitrary latent class, then given an inputted playlist, we could predict new songs based on the playlists likely latent class. To explore the possibility of playlists with similar names containing similar songs, we first looked at the top 20 most common playlist names. Below is a graph of the similarity index for the 20 names, which we define as the average percentage of songs present in both of 2 randomly selected playlists of the same name.  Names with a high similarity index would theoretically be more prone to suggesting the most popular songs of those playlists, while names with a lower similarity index might be more prone to suggesting a wider variety of songs rather than the few most popular songs of playlists with those names.
+</p>
+<p>Based on these findings, we believe that there are a decent amount of playlists that are fairly similar. That is to say: many of the millions of songs are rarely touched. An alternative approach that evaluates on a metric such as novelness of suggestion might hold that effective playlists would introduce listeners to some of those songs that are currently untouched. However, considering our current metric of evaluation is based on successfully completing playlists based off a slice of the initial part of the playlist, this is less of a concern. This is all a somewhat roundabout way of saying that the fact that there are many playlists with fairly high similarity indexes plus the fact that playlists are using many of the same songs over and over again signals that collaborative filtering can be an effective route to tackling this problem. Collaborative filtering is good at finding similar songs that may not be all too novel.
+</p>
 
-      <p>
-        The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.
-      </p>
+<p>
+  The main benefit of collaborative filtering in relation to this problem, however, lies with the nature of the data we are working with. Collaborative filtering completely ignores all features relating to specifics of the actual songs themselves. Content-based models might use features such as lyrics of a song, or waveforms of their audio data. Collaborative filtering, on the other hand, ignores all of these features and only utilizes information about which playlists each song is included in. This makes it perfect for use on the Million Playlists Dataset, given that this dataset has no song-specific feature information. The dataset is in essence simply a list of songs in playlists, which is exactly the type of data collaborative filtering uses as inputs. Collaborative filtering does not leverage or make inferences about any meta-information about playlists such as intended genre or mood in the way that a hybrid of content-based approach might. However, our EDA showed that in many cases, the problem is a fairly straightforward one where people have fairly straightforward aims and create fairly similar playlists. This signals that other approaches may overfit the data and miss the elegance of a simple model.
+</p>
+          <img style="padding: 0 15px float: left," src="similarity scores.jpg" width="599" height="442"  align=”right” alt=""> 
     </div>
     <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <footer class="py-5 bg-dark">
+         <div class="container">
+           <p class="m-0 text-center text-white">Template from Startbootstrap.com Logonav design </p>
+           <p class="m-0 text-center text-white">By David Gibson and Theo Lebryk</p>
 
+         </div>
+         <!-- /.container -->
+       </footer>
   </body>
 
 </html>

@@ -57,19 +57,51 @@
 
     <!-- Page Content -->
     <div class="container">
-      <h1 class="mt-5">Spotify Million Playlist 109A Final Project</h1>
-      <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>
-        <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.
+      <h1 class="mt-5">Literature Review</h1>
+        <!-- <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo. -->
+      <p>
+        There are two main aspects of this problem: generating recommendations give a set of songs and then evaluating those recommendations. Schedl et al.’s work summarizing the state of the field lays out four main ways to tackle the formulation of recommendations:
+      </p>
+      <p>
+        <ol>
+          <li>Content-based strategies: </li>
+            <ul>Base recommendations off of acoustic features such as song duration, chord progressions or lyrics. </ul>
+          <li>Hybridization</li>
+            <ul> Hybrid strategies combine content based strategies with collaborative filtering strategies, often in some ensemble method. </ul>
+          <li>Cross-domain recommendations</li>
+            <ul> Takes information from an auxiliary domain, namely from other user data, in order to build an model (Fernández-Tobías, Braunhofer, Elahi, Ricci, & Cantador, 2016)</ul>
+          <li>Active learning techniques</li>
+            <ul> Identifies and elicits high quality “data that can represent the preferences of users better than by what they provide themselves” (Schedl, Zamani, Chen, Deldjoo, & Elahi, 2018).</ul>
+        </ol>
+      </p>
+      <p>
+        In exploring these methods, we ran into a variety of obstacles. Logistically, all four methods require external data from that which is provided by the million playlist dataset. This is especially problematic for the cross-domain and active learning strategies, because the user data that is publicly available is sparse. Essentially, it is very logistically (and perhaps ethically) difficult to track down auxiliary domains for user data given the data provided for this problem. Spotify itself is much better equipped to tackle a user-based solution because it has far more information than is publicly available. However, we believe our model is coherent enough to add user based features in future iterations of the model.
+      </p>
+      <p>
+        It is more feasible to include a content-based technique in this dataset. Still, there is still a fuzzy matching problem when trying to match Million Playlist data with data from the million songs dataset or lyrics wikis. Furthermore, based on our EDA, we decided that collaborative filtering was a more powerful tool than a content-based strategy (See EDA section). In the spirit of choosing simplicity and effectiveness (and to avoid this problems’ version of overfitting), we therefore decided not to use an ensemble method.
+      </p>
+      Finally, it is worth noting that other projects have focused not just on recommendations, but sequencing of recommendations. In automatic playlist generation, there has been significant time spent looking at not just batching recommendable songs but also recommending songs with an eye towards order so that the automatic playlist runs smoothly continuously. We decided this question was outside the scope of this project. We aimed purely at song discovery, not pleasing user experience in a continuation of an existing playlist. Spotify uses MRS in a number of ways: for existing playlists, it recommends 5-10 songs that might fit with the playlist as a whole, but need not flow as a continuous mix. For the majority of users who don’t have a paid subscription, any addition to the playlist can only be accessed through shuffle play, meaning it is arbitrary to attempt to add songs that flow with the last entries of the playlist. Our project interprets the problem of “song discovery” to mean this issue of batched recommendations without reference to playlist flow.
 
       <p>
-        The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.
+        Spotify’s second main functionality is generating radio on request or after a listener has reached the end of a playlist. This last part is more akin to the MRS problems facing Pandora, which is in part why we left it outside the scope of this project. That said, continuous listening is easily implementable by simply looping our batch recommender as needed.
       </p>
+      <p>
+        Evaluation for MRS can be split into three main categories: error, accuracy, and other methods. We settled on an accuracy based evaluation system. Error based methods require ratings systems to implement some sort of distance metric, and therefore are irrelevant to this problem. Non-accuracy based solutions look at metrics such as spread, diversity, novelty and serendipity of recommendations. These metrics are best served as complementary metrics, but by themselves do not offer a solution to this problem: a model can very well predict novel recommendations or have a wide coverage of the data in how it generates recommendations without those recommendations actually being useful to a wide swath of users. Without ratings to test if these novel, diverse, or serendipitous recommendations are actually well-received, accuracy remains the best metric for evaluating our model.
+      </p>
+
     </div>
     <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <footer class="py-5 bg-dark">
+         <div class="container">
+           <p class="m-0 text-center text-white">Template from Startbootstrap.com Logonav design </p>
+           <p class="m-0 text-center text-white">By David Gibson and Theo Lebryk</p>
 
+         </div>
+         <!-- /.container -->
+       </footer>
   </body>
 
 </html>
