@@ -63,7 +63,17 @@
       <h1 class="mt-5">Literature Review</h1>
         <!-- <img style="padding: 0 15px float: left," src="graph.png" width="599" height="442"  align=”right” alt=""> The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo. -->
 <h5>MRS Problem Context</h5>
+<p>
+  Song recommendation has various challenges that makes it unique from related problems such as book or movie recommendation. There are a far greater number of songs available on Spotify than there are books on Kindle or movies on Netflix. With 40 million songs and 1 million playlists, models have to strike a tenuous balance between computational feasibility and breadth of modeling. This makes subsetting the data an fascinating problem of the utmost importance, and is what led us to explore weighing popular playlists more heavily in our model.
+</p>
 
+<p>
+  Each song, generally only three minutes in length, provides less information than books or movies, making the cold start challenge particularly abstruse. This is partially what led us to forgo a content-based model in favor of a collaborative filtering one: the information from a 3 minute snippet is less powerful than the groupings that thousands of users put these songs into.
+</p>
+
+<p>
+  While other recommendation problems can look at overall consumption behavior, playlists are meant to be more specialized, often aimed at a certain emotion. This means that a single playlist may be very different than a second playlist of the same user, complicating the efficacy of aggregate user-based data. This informed our decision to avoid user-based inputs, as we believe emotions or “vibes” are better understood across the full range of playlists than a single user’s set of playlists. For example, taking in user A’s preferences for a playlist designed to make an exciting party atmosphere tells us much less about which songs to recommend for user A’s ‘study’ playlist than a completely unrelated user’s ‘study’ playlist (presumably determined by the presence of similar songs).
+</p>
 
 <h5>Solving the MRS Problem </h5>
 <p>
@@ -81,28 +91,33 @@ Schedl et al.’s work summarizing the state of the field lays out four main way
           <li>Hybridization</li>
             <ul> Hybrid strategies combine content based strategies with collaborative filtering strategies, often in some ensemble method. </ul>
           <li>Cross-domain recommendations</li>
-            <ul> Takes information from an auxiliary domain, namely from other user data, in order to build an model (Fernández-Tobías, Braunhofer, Elahi, Ricci, & Cantador, 2016)</ul>
+            <ul> Takes information from an auxiliary domain, namely from other user data, in order to build an model</ul>
           <li>Active learning techniques</li>
             <ul> Identifies and elicits high quality “data that can represent the preferences of users better than by what they provide themselves” (Schedl, Zamani, Chen, Deldjoo, & Elahi, 2018).</ul>
         </ol>
       </p>
       <p>
-        In exploring these methods, we ran into a variety of obstacles. Logistically, all four methods require external data from that which is provided by the million playlist dataset. This is especially problematic for the cross-domain and active learning strategies, because the user data that is publicly available is sparse. Essentially, it is very logistically (and perhaps ethically) difficult to track down auxiliary domains for user data given the data provided for this problem. Spotify itself is much better equipped to tackle a user-based solution because it has far more information than is publicly available. However, we believe our model is coherent enough to add user based features in future iterations of the model.
+        In exploring these methods, we ran into a variety of obstacles. Logistically, all four methods require external data from that which is provided by the million playlist dataset. This is especially problematic for the cross-domain and active learning strategies, because the user data that is publicly available is sparse. Essentially, it is very logistically (and perhaps ethically) difficult to track down auxiliary domains for user data given the data provided for this problem. Spotify is already much better equipped to tackle a user-based solution than we are because it has far more information than is publicly available. However, we believe our model is coherent enough to add user based features in future iterations.
       </p>
       <p>
-        It is more feasible to include a content-based technique in this dataset. Still, there is still a fuzzy matching problem when trying to match Million Playlist data with data from the million songs dataset or lyrics wikis. Furthermore, based on our EDA, we decided that collaborative filtering was a more powerful tool than a content-based strategy (See EDA section). In the spirit of choosing simplicity and effectiveness (and to avoid this problems’ version of overfitting), we therefore decided not to use an ensemble method.
+        It is more feasible to include a content-based technique in this dataset. Still, there is a fuzzy matching problem when trying to match the One Million Playlist data with data from the Million Songs dataset or lyrics wikis. Based on our EDA, we decided that collaborative filtering was a more powerful tool than a content-based strategy. In the spirit of choosing simplicity and effectiveness (and to avoid this problems’ version of overfitting), we therefore decided not to use an ensemble method around either user-based or content-based data.
       </p>
-      Finally, it is worth noting that other projects have focused not just on recommendations, but sequencing of recommendations. In automatic playlist generation, there has been significant time spent looking at not just batching recommendable songs but also recommending songs with an eye towards order so that the automatic playlist runs smoothly continuously. We decided this question was outside the scope of this project. We aimed purely at song discovery, not pleasing user experience in a continuation of an existing playlist. Spotify uses MRS in a number of ways: for existing playlists, it recommends 5-10 songs that might fit with the playlist as a whole, but need not flow as a continuous mix. For the majority of users who don’t have a paid subscription, any addition to the playlist can only be accessed through shuffle play, meaning it is arbitrary to attempt to add songs that flow with the last entries of the playlist. Our project interprets the problem of “song discovery” to mean this issue of batched recommendations without reference to playlist flow.
+      Finally, it is worth noting that other projects have focused not just on recommendations, but sequencing of recommendations. In automatic playlist generation, there has been significant time spent looking at not just batching recommendable songs but also recommending songs with an eye towards order so that the automatic playlist runs smoothly continuously. We decided this question was outside the scope of this project. We aimed purely at song discovery, not pleasing user experience in the continuation of an existing playlist. Spotify uses MRS in a number of ways: for existing playlists, it recommends 5-10 songs that might fit with the playlist as a whole, but need not flow as a continuous mix. For the majority of users who don’t have a paid subscription, any addition to the playlist can only be accessed through shuffle play, meaning it is arbitrary to attempt to add songs that flow with the last entries of the playlist. Our project interprets the problem of “song discovery” to mean this issue of batched recommendations without reference to playlist flow.
 
       <p>
         Spotify’s second main functionality is generating radio on request or after a listener has reached the end of a playlist. This last part is more akin to the MRS problems facing Pandora, which is in part why we left it outside the scope of this project. That said, continuous listening is easily implementable by simply looping our batch recommender as needed.
       </p>
+      <p>
+        Spotify’s second main functionality is generating radio on request or after a listener has reached the end of a playlist. This last part is more akin to the MRS problems Pandora specializes in, which is in part why we left it outside the scope of this project. That said, continuous listening is easily implementable by simply looping our batch recommender as needed.
+      </p>
+
+
 <h6>  Evaluation </h6>
       <p>
-        Evaluation for MRS can be split into three main categories: error, accuracy, and other methods. We settled on an accuracy based evaluation system. Error based methods require ratings systems to implement some sort of distance metric, and therefore are irrelevant to this problem. Non-accuracy based solutions look at metrics such as spread, diversity, novelty and serendipity of recommendations. These metrics are best served as complementary metrics, but by themselves do not offer a solution to this problem: a model can very well predict novel recommendations or have a wide coverage of the data in how it generates recommendations without those recommendations actually being useful to a wide swath of users. Without ratings to test if these novel, diverse, or serendipitous recommendations are actually well-received, accuracy remains the best metric for evaluating our model.
+        Evaluation for MRS can be split into three main categories: error, accuracy, and other methods. We settled on an accuracy-based evaluation system. Error-based methods require ratings systems to implement some sort of distance metric, and therefore are irrelevant to this problem. Non-accuracy based solutions look at metrics such as spread, diversity, novelty and serendipity of recommendations. These metrics are best served as complementary metrics, but by themselves do not offer a solution to this problem: a model can predict very novel recommendations or have a wide coverage of the data in how it generates recommendations without those recommendations actually being useful to users. Without ratings to test if these novel, diverse, or serendipitous recommendations are actually well-received, accuracy remains the best metric for evaluating our model.
       </p>
       <p>
-        See <a href='citations.html'>works cited page</a> for list of references. 
+        See <a href='citations.html'>works cited page</a> for list of references.
       </p>
 
 
